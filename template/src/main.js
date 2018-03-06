@@ -6,25 +6,37 @@ import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import FastClick from 'fastclick'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import VueRouter from 'vue-router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import Home from './components/HelloFromVux'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import {
+  DatetimePlugin,
+  BusPlugin,
+  DevicePlugin,
+  ToastPlugin,
+  AlertPlugin,
+  ConfirmPlugin,
+  LoadingPlugin,
+  AjaxPlugin
+} from 'vux'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
-Vue.use(VueRouter){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.use(router){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
-const routes = [{
-  path: '/',
-  component: Home{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-}]{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-
-const router = new VueRouter({
-  routes{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-}){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.use(DevicePlugin){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.use(ToastPlugin){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.use(AlertPlugin){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.use(ConfirmPlugin){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.use(LoadingPlugin){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.use(AjaxPlugin){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.use(BusPlugin){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.use(DatetimePlugin){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 FastClick.attach(document.body){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 /* eslint-disable no-new */
-new Vue({
+const vm = new Vue({
   router,
   render: h => h(App){{#if_eq lintConfig "airbnb"}},{{/if_eq}}
 }).$mount('#app-box'){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+
+export const app = vm{{#if_eq lintConfig "airbnb"}};{{/if_eq}}

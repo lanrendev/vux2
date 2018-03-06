@@ -28,6 +28,7 @@ let webpackConfig = {
       'vue$': 'vue/dist/vue.esm.js',
       {{/if_eq}}
       '@': resolve('src'),
+      'imageBase': resolve('src/assets')
     }
   },
   module: {
