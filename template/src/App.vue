@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="~imageBase/logo.jpg" alt="vue" style="position: absolute; top: -500px; left: 0;">
+    <img src="~imageBase/logo.png" alt="vue" style="position: absolute; top: -500px; left: 0;">
     <transition :name="transitionName">
       <router-view></router-view>
     </transition>
